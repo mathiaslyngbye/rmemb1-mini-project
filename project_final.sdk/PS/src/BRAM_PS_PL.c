@@ -31,7 +31,7 @@ static int addr_value = 1;
 static float charge_rate_standard = 0.1;
 static float charge_rate_rapid = 0.5;
 static int pwm_memory_size = 4096; // i.e. 12 bits
-static float supply_voltage = 6.0; // i.e. 6 volts
+static float supply_voltage = 12.0; // i.e. 6 volts
 static float difference_resistor = 1; // 1 Ohm
 
 /********************************** Main ************************************/
@@ -44,12 +44,13 @@ int main()
 	init_platform();
 	xil_printf("Done.\r\n");
 	initMemory();
-	xil_printf("Welcome to Smart Battery Charging System!\r\n");
+	xil_printf("\r\nWelcome to Smart Battery Charging System!\r\n\n");
 
 
 	int battery_capacity = 0;
 	float battery_nominal_voltage = 0.0;
 	float charge_current = 0.0;
+	char secure_prompt;
 	while(1)
 	{
 		xil_printf("Enter battery capacity (Ah): ");
@@ -71,17 +72,27 @@ int main()
 		// PUT IN LIMITS???
 	}
 
-	xil_printf("\nCharge Status:\r\n");
-	xil_printf("Charge current (A): %0d.%03d\r\n", (int)(charge_current), XAdcFractionToInt(charge_current));
+	// Security prompt
+	xil_printf("\r\nParameters saved. Start charging? [y/N]");
+	scanf(" %c", &secure_prompt);
+	if(secure_prompt != 'y')
+	{
+		xil_printf("Aborting...\r\n");
+		return 0;
+	}
+	printf("\r\n\n");
+
+	// Charge loop
+	xil_printf("Charge Status:\r\n");
 
 	float xadc1_value;
 	float xadc9_value;
 	float voltage_out;
 	float current_out;
-	float pwm_percentage = 23.67;
-	int pwm_memory_out = (pwm_percentage/100)*pwm_memory_size;
+	float pwm_percentage = 0;
+	int pwm_memory_out = (pwm_percentage/100)*(pwm_memory_size-1);
+	MYMEM_u(addr_value)=pwm_memory_out;
 
-	// Charge loop
 	while(1)
 	{
 		// Fetch (and print) XADC values
@@ -90,14 +101,22 @@ int main()
 
 		// Print supply voltage
 		voltage_out = supply_voltage*pwm_percentage*0.01;
-		xil_printf("Supply voltage: %0d.%03dV ",	(int)(voltage_out), 	XAdcFractionToInt(voltage_out));
-		xil_printf("(%0d.%03dV @ ", 				(int)(supply_voltage), 	XAdcFractionToInt(supply_voltage));
-		xil_printf("%0d.%03d%% duty cycle)\r\n", 	(int)(pwm_percentage), 	XAdcFractionToInt(pwm_percentage));
+		xil_printf("Charge voltage (V): %0d.%03d ",		(int)(voltage_out), 	XAdcFractionToInt(voltage_out));
+		xil_printf("(Supply %0d.%03d @ ", 				(int)(supply_voltage), 	XAdcFractionToInt(supply_voltage));
+		xil_printf("%0d.%03d%% duty cycle)\r\n", 		(int)(pwm_percentage), 	XAdcFractionToInt(pwm_percentage));
 
 		// Print supply current
 		current_out = (xadc1_value-xadc9_value)/difference_resistor;
-		xil_printf("Supply current: %0d.%03dA\r\n",	(int)(current_out), 	XAdcFractionToInt(current_out));
+		xil_printf("Charge current (A): %0d.%03d ",		(int)(current_out), 	XAdcFractionToInt(current_out));
+		xil_printf("(Goal %0d.%03d)\r\n",				(int)(charge_current), 	XAdcFractionToInt(charge_current));
 
+		// Calculate and export PWM
+		if(current_out < charge_current && pwm_percentage < 50.0)
+			pwm_percentage += 0.01;
+		else if (current_out > charge_current && pwm_percentage > 0.0)
+			pwm_percentage -= 0.01;
+
+		pwm_memory_out = (pwm_percentage/100)*(pwm_memory_size-1);
 		MYMEM_u(addr_value)=pwm_memory_out;
 
 		// Go up in terminal to overwrite

@@ -1,0 +1,6 @@
+*.cache
+*.hw
+*.user_files
+*.runs
+*.sim
+project_final.srcs/sources_1/bd/

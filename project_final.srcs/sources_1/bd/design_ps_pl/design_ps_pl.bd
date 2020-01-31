@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xB4D335E6318C5040",
+      "boundary_crc": "0xEDA7598EDCA94CB6",
       "device": "xc7z020clg400-1",
       "name": "design_ps_pl",
       "synth_flow_mode": "Hierarchical",
@@ -16,8 +16,11 @@
         "blk_mem_gen_0": "",
         "rst_ps7_0_100M": ""
       },
+      "xadc_wiz_0": "",
+      "pwm_12bit_0": "",
       "PL_BRAM_read": "",
-      "xadc_wiz_0": ""
+      "pwm_enable": "",
+      "pwm_reset": ""
     },
     "interface_ports": {
       "BRAM_PORTB_0": {
@@ -122,10 +125,8 @@
       "sys_clk": {
         "direction": "I"
       },
-      "data_led": {
-        "direction": "O",
-        "left": "3",
-        "right": "0"
+      "pwm_out": {
+        "direction": "O"
       }
     },
     "components": {
@@ -1831,6 +1832,36 @@
           }
         },
         "interface_nets": {
+          "axi_smc_M00_AXI": {
+            "interface_ports": [
+              "axi_smc/M00_AXI",
+              "axi_bram_ctrl_0/S_AXI"
+            ]
+          },
+          "Conn1": {
+            "interface_ports": [
+              "M01_AXI",
+              "axi_smc/M01_AXI"
+            ]
+          },
+          "processing_system7_0_FIXED_IO": {
+            "interface_ports": [
+              "FIXED_IO",
+              "processing_system7_0/FIXED_IO"
+            ]
+          },
+          "axi_bram_ctrl_0_BRAM_PORTA": {
+            "interface_ports": [
+              "axi_bram_ctrl_0/BRAM_PORTA",
+              "blk_mem_gen_0/BRAM_PORTA"
+            ]
+          },
+          "processing_system7_0_DDR": {
+            "interface_ports": [
+              "DDR",
+              "processing_system7_0/DDR"
+            ]
+          },
           "processing_system7_0_M_AXI_GP0": {
             "interface_ports": [
               "processing_system7_0/M_AXI_GP0",
@@ -1841,36 +1872,6 @@
             "interface_ports": [
               "BRAM_PORTB_0",
               "blk_mem_gen_0/BRAM_PORTB"
-            ]
-          },
-          "processing_system7_0_DDR": {
-            "interface_ports": [
-              "DDR",
-              "processing_system7_0/DDR"
-            ]
-          },
-          "axi_bram_ctrl_0_BRAM_PORTA": {
-            "interface_ports": [
-              "axi_bram_ctrl_0/BRAM_PORTA",
-              "blk_mem_gen_0/BRAM_PORTA"
-            ]
-          },
-          "processing_system7_0_FIXED_IO": {
-            "interface_ports": [
-              "FIXED_IO",
-              "processing_system7_0/FIXED_IO"
-            ]
-          },
-          "Conn1": {
-            "interface_ports": [
-              "M01_AXI",
-              "axi_smc/M01_AXI"
-            ]
-          },
-          "axi_smc_M00_AXI": {
-            "interface_ports": [
-              "axi_smc/M00_AXI",
-              "axi_bram_ctrl_0/S_AXI"
             ]
           }
         },
@@ -1898,52 +1899,6 @@
               "processing_system7_0/FCLK_RESET0_N",
               "rst_ps7_0_100M/ext_reset_in"
             ]
-          }
-        }
-      },
-      "PL_BRAM_read": {
-        "vlnv": "xilinx.com:module_ref:PL:1.0",
-        "xci_name": "design_ps_pl_PL_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "PL",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "BRAM_PORTB_0_rst": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "clk_125MHz": {
-            "direction": "I"
-          },
-          "BRAM_PORTB_0_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_PORTB_0_en": {
-            "direction": "O"
-          },
-          "BRAM_PORTB_0_din": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_PORTB_0_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_PORTB_0_we": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "data_out": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
           }
         }
       },
@@ -2000,6 +1955,99 @@
             "value": "channel_sequencer"
           }
         }
+      },
+      "pwm_12bit_0": {
+        "vlnv": "xilinx.com:module_ref:pwm_12bit:1.0",
+        "xci_name": "design_ps_pl_pwm_12bit_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pwm_12bit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "reset_in": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_200M_in": {
+            "direction": "I"
+          },
+          "duty_cycle_in": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "enable_in": {
+            "direction": "I"
+          },
+          "pwm_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "PL_BRAM_read": {
+        "vlnv": "xilinx.com:module_ref:PL:1.0",
+        "xci_name": "design_ps_pl_PL_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PL",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "BRAM_PORTB_0_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "clk_125MHz": {
+            "direction": "I"
+          },
+          "BRAM_PORTB_0_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_PORTB_0_en": {
+            "direction": "O"
+          },
+          "BRAM_PORTB_0_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_PORTB_0_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_PORTB_0_we": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "pwm_enable": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_ps_pl_xlconstant_0_0",
+        "parameters": {
+          "CONST_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "pwm_reset": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_ps_pl_xlconstant_0_1",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -2007,12 +2055,6 @@
         "interface_ports": [
           "Vaux9",
           "xadc_wiz_0/Vaux9"
-        ]
-      },
-      "processing_system7_0_FIXED_IO": {
-        "interface_ports": [
-          "FIXED_IO",
-          "PS_BRAM/FIXED_IO"
         ]
       },
       "processing_system7_0_DDR": {
@@ -2027,16 +2069,22 @@
           "xadc_wiz_0/Vaux1"
         ]
       },
-      "PS_BRAM_M01_AXI": {
+      "processing_system7_0_FIXED_IO": {
         "interface_ports": [
-          "xadc_wiz_0/s_axi_lite",
-          "PS_BRAM/M01_AXI"
+          "FIXED_IO",
+          "PS_BRAM/FIXED_IO"
         ]
       },
       "BRAM_PORTB_0_1": {
         "interface_ports": [
           "BRAM_PORTB_0",
           "PS_BRAM/BRAM_PORTB_0"
+        ]
+      },
+      "PS_BRAM_M01_AXI": {
+        "interface_ports": [
+          "xadc_wiz_0/s_axi_lite",
+          "PS_BRAM/M01_AXI"
         ]
       }
     },
@@ -2057,19 +2105,14 @@
         "ports": [
           "sys_clk",
           "PS_BRAM/BRAM_PORTB_0_clk",
-          "PL_BRAM_read/clk_125MHz"
+          "PL_BRAM_read/clk_125MHz",
+          "pwm_12bit_0/clk_200M_in"
         ]
       },
       "BRAM_PORTB_0_we_1": {
         "ports": [
           "PL_BRAM_read/BRAM_PORTB_0_we",
           "PS_BRAM/BRAM_PORTB_0_we"
-        ]
-      },
-      "PL_0_data_out": {
-        "ports": [
-          "PL_BRAM_read/data_out",
-          "data_led"
         ]
       },
       "PL_0_BRAM_PORTB_0_en": {
@@ -2100,6 +2143,30 @@
         "ports": [
           "PS_BRAM/peripheral_aresetn",
           "xadc_wiz_0/s_axi_aresetn"
+        ]
+      },
+      "PL_BRAM_read_data_out": {
+        "ports": [
+          "PL_BRAM_read/data_out",
+          "pwm_12bit_0/duty_cycle_in"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "pwm_enable/dout",
+          "pwm_12bit_0/enable_in"
+        ]
+      },
+      "pwm_reset_dout": {
+        "ports": [
+          "pwm_reset/dout",
+          "pwm_12bit_0/reset_in"
+        ]
+      },
+      "pwm_12bit_0_pwm_out": {
+        "ports": [
+          "pwm_12bit_0/pwm_out",
+          "pwm_out"
         ]
       }
     },

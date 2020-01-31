@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
-// Date        : Thu Jan 30 11:50:53 2020
+// Date        : Fri Jan 31 13:21:15 2020
 // Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/mal/Workspace/Vivado/project_final/project_final.srcs/sources_1/bd/design_ps_pl/ip/design_ps_pl_PL_0_0/design_ps_pl_PL_0_0_sim_netlist.v
@@ -31,7 +31,7 @@ module design_ps_pl_PL_0_0
   output [31:0]BRAM_PORTB_0_din;
   output [31:0]BRAM_PORTB_0_addr;
   output [3:0]BRAM_PORTB_0_we;
-  output [3:0]data_out;
+  output [11:0]data_out;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -107,7 +107,7 @@ module design_ps_pl_PL_0_0
   assign BRAM_PORTB_0_we[2] = \<const0> ;
   assign BRAM_PORTB_0_we[1] = \<const0> ;
   assign BRAM_PORTB_0_we[0] = \<const0> ;
-  assign data_out[3:0] = BRAM_PORTB_0_dout[3:0];
+  assign data_out[11:0] = BRAM_PORTB_0_dout[11:0];
   GND GND
        (.G(\<const0> ));
   VCC VCC

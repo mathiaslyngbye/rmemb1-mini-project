@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
-// Date        : Thu Jan 30 11:50:52 2020
+// Date        : Fri Jan 31 13:21:14 2020
 // Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_ps_pl_PL_0_0_sim_netlist.v
@@ -31,7 +31,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   output [31:0]BRAM_PORTB_0_din;
   output [31:0]BRAM_PORTB_0_addr;
   output [3:0]BRAM_PORTB_0_we;
-  output [3:0]data_out;
+  output [11:0]data_out;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -107,7 +107,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   assign BRAM_PORTB_0_we[2] = \<const0> ;
   assign BRAM_PORTB_0_we[1] = \<const0> ;
   assign BRAM_PORTB_0_we[0] = \<const0> ;
-  assign data_out[3:0] = BRAM_PORTB_0_dout[3:0];
+  assign data_out[11:0] = BRAM_PORTB_0_dout[11:0];
   GND GND
        (.G(\<const0> ));
   VCC VCC

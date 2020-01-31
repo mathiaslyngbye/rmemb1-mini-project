@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
--- Date        : Thu Jan 30 11:50:52 2020
+-- Date        : Fri Jan 31 13:21:14 2020
 -- Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_ps_pl_PL_0_0_sim_netlist.vhdl
@@ -23,7 +23,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
     BRAM_PORTB_0_din : out STD_LOGIC_VECTOR ( 31 downto 0 );
     BRAM_PORTB_0_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
     BRAM_PORTB_0_we : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    data_out : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    data_out : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
@@ -116,8 +116,8 @@ begin
   BRAM_PORTB_0_we(2) <= \<const0>\;
   BRAM_PORTB_0_we(1) <= \<const0>\;
   BRAM_PORTB_0_we(0) <= \<const0>\;
-  \^bram_portb_0_dout\(3 downto 0) <= BRAM_PORTB_0_dout(3 downto 0);
-  data_out(3 downto 0) <= \^bram_portb_0_dout\(3 downto 0);
+  \^bram_portb_0_dout\(11 downto 0) <= BRAM_PORTB_0_dout(11 downto 0);
+  data_out(11 downto 0) <= \^bram_portb_0_dout\(11 downto 0);
 GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\

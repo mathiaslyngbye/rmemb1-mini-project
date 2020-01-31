@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan 30 13:00:13 2020" VIVADOVERSION="2019.1.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan 31 13:20:21 2020" VIVADOVERSION="2019.1.3">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="bd_de28" PACKAGE="clg400" SPEEDGRADE="-1"/>
 

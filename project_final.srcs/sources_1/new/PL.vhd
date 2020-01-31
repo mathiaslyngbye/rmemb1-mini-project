@@ -40,7 +40,7 @@ entity PL is
            BRAM_PORTB_0_din  : out STD_LOGIC_VECTOR ( 31 downto 0 ); 
            BRAM_PORTB_0_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );               
            BRAM_PORTB_0_we   : out STD_LOGIC_VECTOR ( 3 downto 0 );
-           data_out          : out STD_LOGIC_VECTOR ( 3 downto 0 )
+           data_out          : out STD_LOGIC_VECTOR ( 11 downto 0 )
      );
 end PL;
 
@@ -60,6 +60,6 @@ process(clk_125MHz)
 -- Write enable input. In this case just zeros since we only read 
     BRAM_PORTB_0_we  <=(others=>'0');
  --Data to visualize on the LED
-    data_out<=BRAM_PORTB_0_dout(3 downto 0);
+    data_out<=BRAM_PORTB_0_dout(11 downto 0);
 end process;
 end Behavioral;
