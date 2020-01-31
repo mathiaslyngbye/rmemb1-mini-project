@@ -1,0 +1,137 @@
+
+//#include <stdio.h>
+
+#include "platform.h"
+#include "xil_printf.h"
+#include "xparameters.h"
+#include "bram.h"
+
+#include "xadcps.h"
+#include "xstatus.h"
+#include "stdio.h"
+
+
+#define XADC_DEVICE_ID 		XPAR_XADCPS_0_DEVICE_ID
+
+/************************** Function Prototypes *****************************/
+
+static int XAdcPolledPrintfExample(u16 XAdcDeviceId, int offset, float* value);
+static int XAdcFractionToInt(float FloatNum);
+
+/***************** Macros (Inline Functions) Definitions ********************/
+
+#define printf xil_printf /* Small foot-print printf function */
+
+// converting RAW data from external sourse to voltage
+#define XAdcPs_ExternalRawToVoltage(AdcData)\
+								((((float)(AdcData))* (1.0f))/65536.0f)
+
+/************************** Variable Definitions ****************************/
+
+static XAdcPs XAdcInst;      /* XADC driver instance */
+
+
+int main()
+{
+	init_platform();
+
+    print("Hello ZYNQ\n\r");
+
+	initMemory();
+
+	xil_printf("BRAM initialization complete.\r\n");
+
+	int mem_value, addr_value=1;
+
+	mem_value = MYMEM_u(addr_value);
+
+	/*
+
+		xil_printf("Enter memory value for address %d:\r\n", addr_value);
+		scanf("%d", &mem_value);
+		MYMEM_u(addr_value)=mem_value;				//corresponds to memory address 4 on the FPGA (X"40000004")
+		xil_printf("Memory value %d for address %d updated successfully.\r\n", mem_value, addr_value);
+
+		usleep(1000);
+
+ */
+
+	int Status;
+	float value1;
+	float value2;
+	while(1)
+	{
+		Status = XAdcPolledPrintfExample(XADC_DEVICE_ID, 1, &value1);
+		if (Status != XST_SUCCESS) {
+			return XST_FAILURE;
+		}
+		Status = XAdcPolledPrintfExample(XADC_DEVICE_ID, 9, &value2);
+		if (Status != XST_SUCCESS) {
+			return XST_FAILURE;
+		}
+		printf("\033[2A");
+
+		MYMEM_u(addr_value)=value1;
+	}
+
+	return XST_SUCCESS;
+	cleanup_platform();
+	return 0;
+}
+
+int XAdcPolledPrintfExample(u16 XAdcDeviceId, int offset, float* value)
+{
+	int Status;
+	XAdcPs_Config *ConfigPtr;
+	u32 VccPdroRawData;
+	float VccPintData;
+	XAdcPs *XAdcInstPtr = &XAdcInst;
+
+	//printf("\r\nEntering the XAdc Polled Example. \r\n");
+
+	/*
+	 * Initialize the XAdc driver.
+	 */
+	ConfigPtr = XAdcPs_LookupConfig(XAdcDeviceId);
+	if (ConfigPtr == NULL) {
+		return XST_FAILURE;
+	}
+	XAdcPs_CfgInitialize(XAdcInstPtr, ConfigPtr,
+				ConfigPtr->BaseAddress);
+
+	/*
+	 * Self Test the XADC/ADC device
+	 */
+	Status = XAdcPs_SelfTest(XAdcInstPtr);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+
+	/*
+	 * Read the AD14 input Voltage Data from the
+	 * ADC data registers.
+	 */
+	VccPdroRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_AUX_MIN+offset);
+	VccPintData = XAdcPs_ExternalRawToVoltage(VccPdroRawData);
+	printf("\r\nThe Voltage on Channel %d is %0d.%03d Volts.   \r",
+			offset, (int)(VccPintData), XAdcFractionToInt(VccPintData));
+
+	//printf("\r\nExiting the XAdc Polled Example. \r\n");
+
+	(*value) = VccPintData*3.3;
+
+	return XST_SUCCESS;
+}
+
+int XAdcFractionToInt(float FloatNum)
+{
+	float Temp;
+
+	Temp = FloatNum;
+	if (FloatNum < 0) {
+		Temp = -(FloatNum);
+	}
+
+	return( ((int)((Temp -(float)((int)Temp)) * (1000.0f))));
+}
