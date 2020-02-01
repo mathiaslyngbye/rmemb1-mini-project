@@ -1,6 +1,12 @@
-*.cache
-*.hw
-*.user_files
-*.runs
-*.sim
+project_final.cache/
+project_final.hw/
+project_final.ip_user_files/
+project_final.runs/
+project_final.sim/
+
 project_final.srcs/sources_1/bd/
+
+project_final.sdk/*
+!project_final.sdk/PS
+project_final.sdk/PS/*
+!project_final.sdk/PS/src
