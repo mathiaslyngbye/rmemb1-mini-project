@@ -1,0 +1,33 @@
+#include "xparameters.h"
+//#include "app_cpu1.h"
+//#include "my_utils.h"
+#include "bram.h"
+//#include "mem_interrupt.h"
+
+int main()
+{
+	initMemory();
+
+	int write_value, prev_write_value = 0;
+	xil_printf("Initialization complete.\r\n");
+
+  while(1)
+  {
+		  xil_printf("Enter the motor value:\r\n");
+	  	  scanf("%d", &write_value);
+
+		  if (write_value != prev_write_value)
+		  {
+			  if(write_value < 15000) {write_value = 15000;}
+			  if(write_value > 55000) {write_value = 55000;}
+			  prev_write_value = write_value;
+			  MYMEM_u(1)=write_value;				//corresponds to memory address 4 on the FPGA
+			  xil_printf("Motor value updated successfully.\r\n");
+		  }
+
+	  usleep(1000);
+
+  } //end while loop
+
+	return 0;
+}  //end main function
