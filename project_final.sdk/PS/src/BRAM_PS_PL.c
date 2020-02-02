@@ -33,6 +33,7 @@ static float charge_rate_rapid = 0.5;
 static int pwm_memory_size = 4096; // i.e. 12 bits
 static float supply_voltage = 12.0; // i.e. 6 volts
 static float difference_resistor = 1; // 1 Ohm
+static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
 
 /********************************** Main ************************************/
 
@@ -108,7 +109,11 @@ int main()
 		// Print supply current
 		current_out = (xadc1_value-xadc9_value)/difference_resistor;
 		xil_printf("Charge current (A): %0d.%03d ",		(int)(current_out), 	XAdcFractionToInt(current_out));
-		xil_printf("(Goal %0d.%03d)\r\n",				(int)(charge_current), 	XAdcFractionToInt(charge_current));
+		xil_printf("(Goal %0d.%03d)\r\n\n",				(int)(charge_current), 	XAdcFractionToInt(charge_current));
+
+		// Print progress
+		float charge_percent = (xadc9_value-battery_nominal_voltage)/(battery_voltage_difference*battery_nominal_voltage);
+		xil_printf("Charge percent: %0d.%03d%%\r\n",	(int)(charge_percent*100), 	XAdcFractionToInt(charge_percent*100));
 
 		// Calculate and export PWM
 		if(current_out < charge_current && pwm_percentage < 50.0)
@@ -120,7 +125,7 @@ int main()
 		MYMEM_u(addr_value)=pwm_memory_out;
 
 		// Go up in terminal to overwrite
-		printf("\033[4A");
+		printf("\033[6A");
 	}
 
 	return XST_SUCCESS;
