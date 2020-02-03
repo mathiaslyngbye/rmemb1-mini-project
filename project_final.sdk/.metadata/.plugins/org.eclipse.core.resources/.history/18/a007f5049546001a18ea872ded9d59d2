@@ -113,7 +113,7 @@ int main()
 
 		// Print progress
 		float charge_percent = (xadc9_value-battery_nominal_voltage)/(battery_voltage_difference*battery_nominal_voltage);
-		xil_printf("Charge percent: %0d.%03d%%     \r\n",	(int)(charge_percent*100), 	XAdcFractionToInt(charge_percent*100));
+		xil_printf("Charge percent: %0d.%03d%%\r\n",	(int)(charge_percent*100), 	XAdcFractionToInt(charge_percent*100));
 
 		// Calculate and eort PWM
 		if(current_out < charge_current && pwm_percentage < 100.0)

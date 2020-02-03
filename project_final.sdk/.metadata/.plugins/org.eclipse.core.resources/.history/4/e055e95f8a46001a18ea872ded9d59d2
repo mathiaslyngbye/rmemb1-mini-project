@@ -30,21 +30,28 @@ static XAdcPs XAdcInst;      /* XADC driver instance */
 static int addr_value = 1;
 static float charge_rate_standard = 0.1;
 static float charge_rate_rapid = 0.5;
+static int pwm_memory_size = 4096; // i.e. 12 bits
+static float supply_voltage = 12.0; // i.e. 6 volts
+static float difference_resistor = 1; // 1 Ohm
+static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
 
 /********************************** Main ************************************/
+
 int main()
 {
 	// Initiation
+	printf("\033[H\033[J");	// Clear terminal
 	xil_printf("Initializing platform...\r\n");
 	init_platform();
 	xil_printf("Done.\r\n");
 	initMemory();
-	xil_printf("Welcome to Smart Battery Charging System!\r\n");
+	xil_printf("\r\nWelcome to Smart Battery Charging System!\r\n\n");
 
 
 	int battery_capacity = 0;
 	float battery_nominal_voltage = 0.0;
-	float charge_rate = 0.0;
+	float charge_current = 0.0;
+	char secure_prompt;
 	while(1)
 	{
 		xil_printf("Enter battery capacity (Ah): ");
@@ -61,32 +68,64 @@ int main()
 		}
 		else
 		{
-			xil_printf("Invalid input... Try again.");
+			xil_printf("Invalid input... Try again.\r\n");
 		}
 		// PUT IN LIMITS???
 	}
 
-	xil_printf("\nCharge Status:\r\n");
-	xil_printf("C-rate: %0d.%03d\r\n", (int)(charge_current), XAdcFractionToInt(charge_current));
+	// Security prompt
+	xil_printf("\r\nParameters saved. Start charging? [y/N]");
+	scanf(" %c", &secure_prompt);
+	if(secure_prompt != 'y')
+	{
+		xil_printf("Aborting...\r\n");
+		return 0;
+	}
+	printf("\r\n\n");
 
-	int Status;
+	// Charge loop
+	xil_printf("Charge Status:\r\n");
+
 	float xadc1_value;
 	float xadc9_value;
-	int out_voltage_led;
+	float voltage_out;
+	float current_out;
+	float pwm_percentage = 0;
+	int pwm_memory_out = (pwm_percentage/100)*(pwm_memory_size-1);
+	MYMEM_u(addr_value)=pwm_memory_out;
+
 	while(1)
 	{
-		Status = XAdcPolledPrintfExample(XADC_DEVICE_ID, 1, &xadc1_value);
-		if (Status != XST_SUCCESS) {
-			return XST_FAILURE;
-		}
-		Status = XAdcPolledPrintfExample(XADC_DEVICE_ID, 9, &xadc9_value);
-		if (Status != XST_SUCCESS) {
-			return XST_FAILURE;
-		}
-		printf("\033[2A");
+		// Fetch (and print) XADC values
+		XAdcPolledPrintfExample(XADC_DEVICE_ID, 1, &xadc1_value);
+		XAdcPolledPrintfExample(XADC_DEVICE_ID, 9, &xadc9_value);
 
-		out_voltage_led = xadc1_value; // Convert to int
-		MYMEM_u(addr_value)=out_voltage_led;
+		// Print supply voltage
+		voltage_out = supply_voltage*pwm_percentage*0.01;
+		xil_printf("Charge voltage (V): %0d.%03d ",		(int)(voltage_out), 	XAdcFractionToInt(voltage_out));
+		xil_printf("(Supply %0d.%03d @ ", 				(int)(supply_voltage), 	XAdcFractionToInt(supply_voltage));
+		xil_printf("%0d.%03d%% duty cycle)\r\n", 		(int)(pwm_percentage), 	XAdcFractionToInt(pwm_percentage));
+
+		// Print supply current
+		current_out = (xadc1_value-xadc9_value)/difference_resistor;
+		xil_printf("Charge current (A): %0d.%03d ",		(int)(current_out), 	XAdcFractionToInt(current_out));
+		xil_printf("(Goal %0d.%03d)\r\n\n",				(int)(charge_current), 	XAdcFractionToInt(charge_current));
+
+		// Print progress
+		float charge_percent = (xadc9_value-battery_nominal_voltage)/(battery_voltage_difference*battery_nominal_voltage);
+		xil_printf("Charge percent: %0d.%03d%%\r\n",	(int)(charge_percent*100), 	XAdcFractionToInt(charge_percent*100));
+
+		// Calculate and export PWM
+		if(current_out < charge_current && pwm_percentage < 50.0)
+			pwm_percentage += 0.01;
+		else if (current_out > charge_current && pwm_percentage > 0.0)
+			pwm_percentage -= 0.01;
+
+		pwm_memory_out = (pwm_percentage/100)*(pwm_memory_size-1);
+		MYMEM_u(addr_value)=pwm_memory_out;
+
+		// Go up in terminal to overwrite
+		printf("\033[6A");
 	}
 
 	return XST_SUCCESS;
