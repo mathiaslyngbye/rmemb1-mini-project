@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# PL, pwm_12bit
+# PL, count_bin, pwm_14bit
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -1044,6 +1044,7 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
+  set data_led [ create_bd_port -dir O -from 3 -to 0 data_led ]
   set pwm_out [ create_bd_port -dir O pwm_out ]
   set sys_clk [ create_bd_port -dir I sys_clk ]
 
@@ -1061,13 +1062,24 @@ proc create_root_design { parentCell } {
   # Create instance: PS_BRAM
   create_hier_cell_PS_BRAM [current_bd_instance .] PS_BRAM
 
-  # Create instance: pwm_12bit_0, and set properties
-  set block_name pwm_12bit
-  set block_cell_name pwm_12bit_0
-  if { [catch {set pwm_12bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: count_bin_0, and set properties
+  set block_name count_bin
+  set block_cell_name count_bin_0
+  if { [catch {set count_bin_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $pwm_12bit_0 eq "" } {
+   } elseif { $count_bin_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: pwm_14bit_0, and set properties
+  set block_name pwm_14bit
+  set block_cell_name pwm_14bit_0
+  if { [catch {set pwm_14bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $pwm_14bit_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -1090,7 +1102,7 @@ proc create_root_design { parentCell } {
    CONFIG.CHANNEL_AVERAGING {16} \
    CONFIG.CHANNEL_ENABLE_VAUXP1_VAUXN1 {true} \
    CONFIG.CHANNEL_ENABLE_VAUXP9_VAUXN9 {true} \
-   CONFIG.CHANNEL_ENABLE_VP_VN {true} \
+   CONFIG.CHANNEL_ENABLE_VP_VN {false} \
    CONFIG.ENABLE_VCCDDRO_ALARM {false} \
    CONFIG.ENABLE_VCCPAUX_ALARM {false} \
    CONFIG.ENABLE_VCCPINT_ALARM {false} \
@@ -1119,14 +1131,16 @@ proc create_root_design { parentCell } {
   connect_bd_net -net BRAM_PORTB_0_we_1 [get_bd_pins PL_BRAM_read/BRAM_PORTB_0_we] [get_bd_pins PS_BRAM/BRAM_PORTB_0_we]
   connect_bd_net -net PL_0_BRAM_PORTB_0_addr [get_bd_pins PL_BRAM_read/BRAM_PORTB_0_addr] [get_bd_pins PS_BRAM/BRAM_PORTB_0_addr]
   connect_bd_net -net PL_0_BRAM_PORTB_0_en [get_bd_pins PL_BRAM_read/BRAM_PORTB_0_en] [get_bd_pins PS_BRAM/BRAM_PORTB_0_en]
-  connect_bd_net -net PL_BRAM_read_data_out [get_bd_pins PL_BRAM_read/data_out] [get_bd_pins pwm_12bit_0/duty_cycle_in]
+  connect_bd_net -net PL_BRAM_read_led_out [get_bd_ports data_led] [get_bd_pins PL_BRAM_read/led_out]
+  connect_bd_net -net PL_BRAM_read_pwm_out [get_bd_pins PL_BRAM_read/pwm_out] [get_bd_pins pwm_14bit_0/duty_cycle_in]
   connect_bd_net -net PS_BRAM_FCLK_CLK0 [get_bd_pins PS_BRAM/FCLK_CLK0] [get_bd_pins xadc_wiz_0/s_axi_aclk]
   connect_bd_net -net PS_BRAM_peripheral_aresetn [get_bd_pins PS_BRAM/peripheral_aresetn] [get_bd_pins xadc_wiz_0/s_axi_aresetn]
-  connect_bd_net -net clk_125MHz_0_1 [get_bd_ports sys_clk] [get_bd_pins PL_BRAM_read/clk_125MHz] [get_bd_pins PS_BRAM/BRAM_PORTB_0_clk] [get_bd_pins pwm_12bit_0/clk_200M_in]
+  connect_bd_net -net clk_125MHz_0_1 [get_bd_ports sys_clk] [get_bd_pins PL_BRAM_read/clk_125MHz] [get_bd_pins PS_BRAM/BRAM_PORTB_0_clk] [get_bd_pins count_bin_0/clk] [get_bd_pins pwm_14bit_0/clk_125M_in]
+  connect_bd_net -net count_bin_0_count [get_bd_pins PL_BRAM_read/toggle_in] [get_bd_pins count_bin_0/count]
   connect_bd_net -net ps_BRAM_PORTB_0_dout [get_bd_pins PL_BRAM_read/BRAM_PORTB_0_dout] [get_bd_pins PS_BRAM/BRAM_PORTB_0_dout]
-  connect_bd_net -net pwm_12bit_0_pwm_out [get_bd_ports pwm_out] [get_bd_pins pwm_12bit_0/pwm_out]
-  connect_bd_net -net pwm_reset_dout [get_bd_pins pwm_12bit_0/reset_in] [get_bd_pins pwm_reset/dout]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins pwm_12bit_0/enable_in] [get_bd_pins pwm_enable/dout]
+  connect_bd_net -net pwm_14bit_0_pwm_out [get_bd_ports pwm_out] [get_bd_pins pwm_14bit_0/pwm_out]
+  connect_bd_net -net pwm_enable_dout [get_bd_pins pwm_14bit_0/enable_in] [get_bd_pins pwm_enable/dout]
+  connect_bd_net -net pwm_reset_dout [get_bd_pins pwm_14bit_0/reset_in] [get_bd_pins pwm_reset/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00002000 -offset 0x40000000 [get_bd_addr_spaces PS_BRAM/processing_system7_0/Data] [get_bd_addr_segs PS_BRAM/axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0

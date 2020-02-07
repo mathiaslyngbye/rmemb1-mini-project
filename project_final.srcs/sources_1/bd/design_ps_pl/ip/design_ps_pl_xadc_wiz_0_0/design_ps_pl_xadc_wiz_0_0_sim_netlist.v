@@ -1,8 +1,8 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
-// Date        : Thu Jan 30 13:00:07 2020
-// Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
+// Date        : Tue Feb  4 16:06:10 2020
+// Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/mal/Workspace/Vivado/project_final/project_final.srcs/sources_1/bd/design_ps_pl/ip/design_ps_pl_xadc_wiz_0_0/design_ps_pl_xadc_wiz_0_0_sim_netlist.v
 // Design      : design_ps_pl_xadc_wiz_0_0
@@ -5182,7 +5182,7 @@ module design_ps_pl_xadc_wiz_0_0_design_ps_pl_xadc_wiz_0_0_xadc_core_drp
     .INIT_45(16'h0000),
     .INIT_46(16'h0000),
     .INIT_47(16'h0000),
-    .INIT_48(16'h0800),
+    .INIT_48(16'h0000),
     .INIT_49(16'h0202),
     .INIT_4A(16'h0000),
     .INIT_4B(16'h0000),

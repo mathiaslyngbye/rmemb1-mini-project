@@ -1,8 +1,8 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
--- Date        : Thu Jan 30 13:00:07 2020
--- Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
+-- Date        : Tue Feb  4 16:06:10 2020
+-- Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/mal/Workspace/Vivado/project_final/project_final.srcs/sources_1/bd/design_ps_pl/ip/design_ps_pl_xadc_wiz_0_0/design_ps_pl_xadc_wiz_0_0_sim_netlist.vhdl
 -- Design      : design_ps_pl_xadc_wiz_0_0
@@ -3478,7 +3478,7 @@ XADC_INST: unisim.vcomponents.XADC
       INIT_45 => X"0000",
       INIT_46 => X"0000",
       INIT_47 => X"0000",
-      INIT_48 => X"0800",
+      INIT_48 => X"0000",
       INIT_49 => X"0202",
       INIT_4A => X"0000",
       INIT_4B => X"0000",

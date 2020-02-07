@@ -26,7 +26,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity pwm_12bit is
+entity pwm_14bit is
 ----------------------------------------------------------------------------------
 -- Select the bit shift that fits the required pwm frq
 -- @ 200MHz 8bit (2^8)/200MHz = 0.00000128s
@@ -42,39 +42,39 @@ entity pwm_12bit is
 -- Genrics
 ----------------------------------------------------------------------------------
 	generic (
-            bitshift_reg            : integer := 5
+            bitshift_reg            : integer := 0
             );
 ----------------------------------------------------------------------------------
 -- Port definition for pwm generator
 ----------------------------------------------------------------------------------
 
-    Port ( clk_200M_in              : in STD_LOGIC;
-           duty_cycle_in            : in STD_LOGIC_VECTOR (11 downto 0);
+    Port ( clk_125M_in              : in STD_LOGIC;
+           duty_cycle_in            : in STD_LOGIC_VECTOR (13 downto 0);
            enable_in                : in STD_LOGIC;
            reset_in                 : in STD_LOGIC;
            pwm_out                  : out STD_LOGIC);
-end pwm_12bit;
+end pwm_14bit;
 
-architecture Behavioral of pwm_12bit is
+architecture Behavioral of pwm_14bit is
 
 ----------------------------------------------------------------------------------
 -- Signal definitions
 ----------------------------------------------------------------------------------
-    signal counter                  : unsigned((bitshift_reg + 11) downto 0) := (others => '0');
+    signal counter                  : unsigned((bitshift_reg + 13) downto 0) := (others => '0');
 begin
 
 ----------------------------------------------------------------------------------
 -- PWM process
 ----------------------------------------------------------------------------------
-process (clk_200M_in)
+process (clk_125M_in)
 begin
     if(reset_in = '1') then
         counter <= (others => '0');
-    elsif (rising_edge(clk_200M_in)) then
+    elsif (rising_edge(clk_125M_in)) then
         pwm_out <= '0';
         if(enable_in = '1') then
             counter <= counter + 1;
-            if((counter((bitshift_reg + 11) downto bitshift_reg)) < unsigned(duty_cycle_in)) then
+            if((counter((bitshift_reg + 13) downto bitshift_reg)) < unsigned(duty_cycle_in)) then
                 pwm_out <= '1';
             end if;
         end if;

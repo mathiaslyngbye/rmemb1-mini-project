@@ -1,8 +1,8 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
-// Date        : Fri Jan 31 13:21:15 2020
-// Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
+// Date        : Fri Feb  7 14:23:48 2020
+// Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/mal/Workspace/Vivado/project_final/project_final.srcs/sources_1/bd/design_ps_pl/ip/design_ps_pl_PL_0_0/design_ps_pl_PL_0_0_sim_netlist.v
 // Design      : design_ps_pl_PL_0_0
@@ -23,7 +23,9 @@ module design_ps_pl_PL_0_0
     BRAM_PORTB_0_din,
     BRAM_PORTB_0_addr,
     BRAM_PORTB_0_we,
-    data_out);
+    toggle_in,
+    led_out,
+    pwm_out);
   input clk_125MHz;
   input [31:0]BRAM_PORTB_0_dout;
   output BRAM_PORTB_0_en;
@@ -31,11 +33,17 @@ module design_ps_pl_PL_0_0
   output [31:0]BRAM_PORTB_0_din;
   output [31:0]BRAM_PORTB_0_addr;
   output [3:0]BRAM_PORTB_0_we;
-  output [11:0]data_out;
+  input toggle_in;
+  output [3:0]led_out;
+  output [13:0]pwm_out;
 
   wire \<const0> ;
   wire \<const1> ;
+  wire [3:3]\^BRAM_PORTB_0_addr ;
   wire [31:0]BRAM_PORTB_0_dout;
+  wire [3:0]led_out;
+  wire [13:0]pwm_out;
+  wire toggle_in;
 
   assign BRAM_PORTB_0_addr[31] = \<const0> ;
   assign BRAM_PORTB_0_addr[30] = \<const1> ;
@@ -65,8 +73,8 @@ module design_ps_pl_PL_0_0
   assign BRAM_PORTB_0_addr[6] = \<const0> ;
   assign BRAM_PORTB_0_addr[5] = \<const0> ;
   assign BRAM_PORTB_0_addr[4] = \<const0> ;
-  assign BRAM_PORTB_0_addr[3] = \<const0> ;
-  assign BRAM_PORTB_0_addr[2] = \<const1> ;
+  assign BRAM_PORTB_0_addr[3] = \^BRAM_PORTB_0_addr [3];
+  assign BRAM_PORTB_0_addr[2] = toggle_in;
   assign BRAM_PORTB_0_addr[1] = \<const0> ;
   assign BRAM_PORTB_0_addr[0] = \<const0> ;
   assign BRAM_PORTB_0_din[31] = \<const0> ;
@@ -107,11 +115,204 @@ module design_ps_pl_PL_0_0
   assign BRAM_PORTB_0_we[2] = \<const0> ;
   assign BRAM_PORTB_0_we[1] = \<const0> ;
   assign BRAM_PORTB_0_we[0] = \<const0> ;
-  assign data_out[11:0] = BRAM_PORTB_0_dout[11:0];
   GND GND
        (.G(\<const0> ));
+  design_ps_pl_PL_0_0_PL U0
+       (.BRAM_PORTB_0_addr(\^BRAM_PORTB_0_addr ),
+        .BRAM_PORTB_0_dout(BRAM_PORTB_0_dout[13:0]),
+        .led_out(led_out),
+        .pwm_out(pwm_out),
+        .toggle_in(toggle_in));
   VCC VCC
        (.P(\<const1> ));
+endmodule
+
+(* ORIG_REF_NAME = "PL" *) 
+module design_ps_pl_PL_0_0_PL
+   (led_out,
+    BRAM_PORTB_0_addr,
+    pwm_out,
+    BRAM_PORTB_0_dout,
+    toggle_in);
+  output [3:0]led_out;
+  output [0:0]BRAM_PORTB_0_addr;
+  output [13:0]pwm_out;
+  input [13:0]BRAM_PORTB_0_dout;
+  input toggle_in;
+
+  wire [0:0]BRAM_PORTB_0_addr;
+  wire [13:0]BRAM_PORTB_0_dout;
+  wire [3:0]led_out;
+  wire [13:0]pwm_out;
+  wire toggle_in;
+
+  LUT1 #(
+    .INIT(2'h1)) 
+    \BRAM_PORTB_0_addr[3]_INST_0 
+       (.I0(toggle_in),
+        .O(BRAM_PORTB_0_addr));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \led_tmp_reg[0] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[0]),
+        .G(BRAM_PORTB_0_addr),
+        .GE(1'b1),
+        .Q(led_out[0]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \led_tmp_reg[1] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[1]),
+        .G(BRAM_PORTB_0_addr),
+        .GE(1'b1),
+        .Q(led_out[1]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \led_tmp_reg[2] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[2]),
+        .G(BRAM_PORTB_0_addr),
+        .GE(1'b1),
+        .Q(led_out[2]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \led_tmp_reg[3] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[3]),
+        .G(BRAM_PORTB_0_addr),
+        .GE(1'b1),
+        .Q(led_out[3]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[0] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[0]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[0]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[10] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[10]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[10]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[11] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[11]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[11]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[12] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[12]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[12]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[13] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[13]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[13]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[1] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[1]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[1]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[2] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[2]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[2]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[3] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[3]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[3]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[4] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[4]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[4]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[5] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[5]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[5]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[6] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[6]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[6]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[7] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[7]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[7]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[8] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[8]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[8]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \pwm_tmp_reg[9] 
+       (.CLR(1'b0),
+        .D(BRAM_PORTB_0_dout[9]),
+        .G(toggle_in),
+        .GE(1'b1),
+        .Q(pwm_out[9]));
 endmodule
 `ifndef GLBL
 `define GLBL

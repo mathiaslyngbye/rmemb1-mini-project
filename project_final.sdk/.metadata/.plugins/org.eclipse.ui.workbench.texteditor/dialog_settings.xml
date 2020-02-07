@@ -2,12 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="pwm_percent" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="pwm_percent"/>
+			<item value="current_out"/>
+			<item value="addr_value"/>
+			<item value="xadc9_value"/>
+			<item value="xadc_value"/>
+			<item value="charge_percent"/>
 			<item value="Ex1"/>
 			<item value="MYMEM"/>
 		</list>
@@ -18,7 +24,7 @@
 		<item value="312" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="444" key="DIALOG_HEIGHT"/>
-		<item value="826" key="DIALOG_X_ORIGIN"/>
-		<item value="328" key="DIALOG_Y_ORIGIN"/>
+		<item value="706" key="DIALOG_X_ORIGIN"/>
+		<item value="388" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

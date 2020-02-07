@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
---Date        : Fri Jan 31 13:20:17 2020
---Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
+--Date        : Fri Feb  7 14:22:48 2020
+--Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.4 LTS
 --Command     : generate_target design_ps_pl.bd
 --Design      : design_ps_pl
 --Purpose     : IP block netlist
@@ -748,11 +748,12 @@ entity design_ps_pl is
     Vaux1_v_p : in STD_LOGIC;
     Vaux9_v_n : in STD_LOGIC;
     Vaux9_v_p : in STD_LOGIC;
+    data_led : out STD_LOGIC_VECTOR ( 3 downto 0 );
     pwm_out : out STD_LOGIC;
     sys_clk : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_ps_pl : entity is "design_ps_pl,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_ps_pl,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=11,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_ps_pl : entity is "design_ps_pl,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_ps_pl,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=12,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_ps_pl : entity is "design_ps_pl.hwdef";
 end design_ps_pl;
@@ -793,27 +794,6 @@ architecture STRUCTURE of design_ps_pl is
     busy_out : out STD_LOGIC
   );
   end component design_ps_pl_xadc_wiz_0_0;
-  component design_ps_pl_pwm_12bit_0_0 is
-  port (
-    clk_200M_in : in STD_LOGIC;
-    duty_cycle_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    enable_in : in STD_LOGIC;
-    reset_in : in STD_LOGIC;
-    pwm_out : out STD_LOGIC
-  );
-  end component design_ps_pl_pwm_12bit_0_0;
-  component design_ps_pl_PL_0_0 is
-  port (
-    clk_125MHz : in STD_LOGIC;
-    BRAM_PORTB_0_dout : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_0_en : out STD_LOGIC;
-    BRAM_PORTB_0_rst : out STD_LOGIC;
-    BRAM_PORTB_0_din : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_0_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_0_we : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    data_out : out STD_LOGIC_VECTOR ( 11 downto 0 )
-  );
-  end component design_ps_pl_PL_0_0;
   component design_ps_pl_xlconstant_0_0 is
   port (
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
@@ -824,12 +804,42 @@ architecture STRUCTURE of design_ps_pl is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_ps_pl_xlconstant_0_1;
+  component design_ps_pl_pwm_14bit_0_0 is
+  port (
+    clk_125M_in : in STD_LOGIC;
+    duty_cycle_in : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    enable_in : in STD_LOGIC;
+    reset_in : in STD_LOGIC;
+    pwm_out : out STD_LOGIC
+  );
+  end component design_ps_pl_pwm_14bit_0_0;
+  component design_ps_pl_count_bin_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    count : out STD_LOGIC
+  );
+  end component design_ps_pl_count_bin_0_0;
+  component design_ps_pl_PL_0_0 is
+  port (
+    clk_125MHz : in STD_LOGIC;
+    BRAM_PORTB_0_dout : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_0_en : out STD_LOGIC;
+    BRAM_PORTB_0_rst : out STD_LOGIC;
+    BRAM_PORTB_0_din : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_0_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_0_we : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    toggle_in : in STD_LOGIC;
+    led_out : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    pwm_out : out STD_LOGIC_VECTOR ( 13 downto 0 )
+  );
+  end component design_ps_pl_PL_0_0;
   signal BRAM_PORTB_0_din_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal BRAM_PORTB_0_rst_1 : STD_LOGIC;
   signal BRAM_PORTB_0_we_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal PL_0_BRAM_PORTB_0_addr : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal PL_0_BRAM_PORTB_0_en : STD_LOGIC;
-  signal PL_BRAM_read_data_out : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal PL_BRAM_read_led_out : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal PL_BRAM_read_pwm_out : STD_LOGIC_VECTOR ( 13 downto 0 );
   signal PS_BRAM_FCLK_CLK0 : STD_LOGIC;
   signal PS_BRAM_M01_AXI_ARADDR : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal PS_BRAM_M01_AXI_ARREADY : STD_LOGIC;
@@ -854,6 +864,7 @@ architecture STRUCTURE of design_ps_pl is
   signal Vaux9_1_V_N : STD_LOGIC;
   signal Vaux9_1_V_P : STD_LOGIC;
   signal clk_125MHz_0_1 : STD_LOGIC;
+  signal count_bin_0_count : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -876,9 +887,9 @@ architecture STRUCTURE of design_ps_pl is
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
   signal ps_BRAM_PORTB_0_dout : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal pwm_12bit_0_pwm_out : STD_LOGIC;
+  signal pwm_14bit_0_pwm_out : STD_LOGIC;
+  signal pwm_enable_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal pwm_reset_dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_xadc_wiz_0_alarm_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_busy_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_eoc_out_UNCONNECTED : STD_LOGIC;
@@ -920,7 +931,8 @@ begin
   Vaux9_1_V_N <= Vaux9_v_n;
   Vaux9_1_V_P <= Vaux9_v_p;
   clk_125MHz_0_1 <= sys_clk;
-  pwm_out <= pwm_12bit_0_pwm_out;
+  data_led(3 downto 0) <= PL_BRAM_read_led_out(3 downto 0);
+  pwm_out <= pwm_14bit_0_pwm_out;
 PL_BRAM_read: component design_ps_pl_PL_0_0
      port map (
       BRAM_PORTB_0_addr(31 downto 0) => PL_0_BRAM_PORTB_0_addr(31 downto 0),
@@ -930,7 +942,9 @@ PL_BRAM_read: component design_ps_pl_PL_0_0
       BRAM_PORTB_0_rst => BRAM_PORTB_0_rst_1,
       BRAM_PORTB_0_we(3 downto 0) => BRAM_PORTB_0_we_1(3 downto 0),
       clk_125MHz => clk_125MHz_0_1,
-      data_out(11 downto 0) => PL_BRAM_read_data_out(11 downto 0)
+      led_out(3 downto 0) => PL_BRAM_read_led_out(3 downto 0),
+      pwm_out(13 downto 0) => PL_BRAM_read_pwm_out(13 downto 0),
+      toggle_in => count_bin_0_count
     );
 PS_BRAM: entity work.PS_BRAM_imp_1XS9KR3
      port map (
@@ -982,17 +996,22 @@ PS_BRAM: entity work.PS_BRAM_imp_1XS9KR3
       M01_AXI_wvalid => PS_BRAM_M01_AXI_WVALID,
       peripheral_aresetn(0) => PS_BRAM_peripheral_aresetn(0)
     );
-pwm_12bit_0: component design_ps_pl_pwm_12bit_0_0
+count_bin_0: component design_ps_pl_count_bin_0_0
      port map (
-      clk_200M_in => clk_125MHz_0_1,
-      duty_cycle_in(11 downto 0) => PL_BRAM_read_data_out(11 downto 0),
-      enable_in => xlconstant_0_dout(0),
-      pwm_out => pwm_12bit_0_pwm_out,
+      clk => clk_125MHz_0_1,
+      count => count_bin_0_count
+    );
+pwm_14bit_0: component design_ps_pl_pwm_14bit_0_0
+     port map (
+      clk_125M_in => clk_125MHz_0_1,
+      duty_cycle_in(13 downto 0) => PL_BRAM_read_pwm_out(13 downto 0),
+      enable_in => pwm_enable_dout(0),
+      pwm_out => pwm_14bit_0_pwm_out,
       reset_in => pwm_reset_dout(0)
     );
 pwm_enable: component design_ps_pl_xlconstant_0_0
      port map (
-      dout(0) => xlconstant_0_dout(0)
+      dout(0) => pwm_enable_dout(0)
     );
 pwm_reset: component design_ps_pl_xlconstant_0_1
      port map (

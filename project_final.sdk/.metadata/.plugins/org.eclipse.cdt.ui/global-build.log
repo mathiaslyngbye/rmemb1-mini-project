@@ -1107,3 +1107,2645 @@ arm-none-eabi-size PS.elf  |tee "PS.elf.size"
   95812	   2688	  23424	 121924	  1dc44	PS.elf
 Finished building: PS.elf.size
  
+14:32:36 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:108:6: error: redeclaration of 'pwm_memory_out' with no linkage
+  int pwm_memory_out = (pwm_percentage/100)*(pwm_memory_size-1);
+      ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:59:6: note: previous declaration of 'pwm_memory_out' was here
+  int pwm_memory_out;
+      ^~~~~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:32:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+make: *** [src/BRAM_PS_PL.o] Error 1
+14:33:01 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:32:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94492	   2688	  23424	 120604	  1d71c	PS.elf
+Finished building: PS.elf.size
+ 
+14:33:56 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:36:00 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:36:53 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:53:47 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:18:04 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:18:47 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:57:58 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:10:56 **** Clean-only build of project Ex1_bsp ****
+make -k clean 
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s clean 
+rm -f ps7_cortexa9_0/lib/libxil.a
+16:10:57 **** Clean-only build of configuration Debug for project PS ****
+make clean 
+rm -rf  ./src/BRAM_PS_PL.o ./src/platform.o  ./src/BRAM_PS_PL.d ./src/platform.d  PS.elf.size  PS.elf
+ 
+16:10:58 **** Build of project Ex1_bsp ****
+make -k all 
+Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/bram_v4_3/src
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling ddrps
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling dmaps
+Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling cpu_cortexa9
+Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scugic
+Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling emacps
+Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpiops
+Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling standalone
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling qspips
+Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling xadcps
+Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sdps
+Running Make libs in ps7_cortexa9_0/libsrc/bram_v4_3/src
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling bram
+Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling devcfg
+Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scuwdt
+Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling uartps
+Running Make libs in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sysmon
+Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling usbps
+Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scutimer
+Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling coresightps_dcc
+Finished building libraries
+16:11:11 **** Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:32:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94492	   2688	  23424	 120604	  1d71c	PS.elf
+Finished building: PS.elf.size
+ 
+16:12:01 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:13:00 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:19:26 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:28:30 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:59:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:32:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94428	   2688	  23424	 120540	  1d6dc	PS.elf
+Finished building: PS.elf.size
+ 
+16:28:40 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:33:42 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:64:24: error: 'pwm_put' undeclared (first use in this function); did you mean 'pwm_out'?
+   xil_printf("%d\r\n", pwm_put);
+                        ^~~~~~~
+                        pwm_out
+../src/BRAM_PS_PL.c:64:24: note: each undeclared identifier is reported only once for each function it appears in
+../src/BRAM_PS_PL.c:59:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:32:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+make: *** [src/BRAM_PS_PL.o] Error 1
+16:33:48 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:59:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:32:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94444	   2688	  23424	 120556	  1d6ec	PS.elf
+Finished building: PS.elf.size
+ 
+16:43:49 **** Clean-only build of project Ex1_bsp ****
+make -k clean 
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s clean 
+rm -f ps7_cortexa9_0/lib/libxil.a
+16:43:50 **** Clean-only build of configuration Debug for project PS ****
+make clean 
+rm -rf  ./src/BRAM_PS_PL.o ./src/platform.o  ./src/BRAM_PS_PL.d ./src/platform.d  PS.elf.size  PS.elf
+ 
+16:43:51 **** Build of project Ex1_bsp ****
+make -k all 
+Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/bram_v4_3/src
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling ddrps
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling dmaps
+Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling cpu_cortexa9
+Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scugic
+Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling emacps
+Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpiops
+Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling standalone
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling qspips
+Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling xadcps
+Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sdps
+Running Make libs in ps7_cortexa9_0/libsrc/bram_v4_3/src
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling bram
+Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling devcfg
+Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scuwdt
+Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling uartps
+Running Make libs in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sysmon
+Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling usbps
+Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scutimer
+Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling coresightps_dcc
+Finished building libraries
+16:44:05 **** Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:59:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:32:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94444	   2688	  23424	 120556	  1d6ec	PS.elf
+Finished building: PS.elf.size
+ 
+16:45:04 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:45:41 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:59:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:32:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94428	   2688	  23424	 120540	  1d6dc	PS.elf
+Finished building: PS.elf.size
+ 
+16:45:51 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:01:58 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:18:35 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:33:50 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:25:14 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:110:8: warning: unused variable 'average' [-Wunused-variable]
+  float average = 0.0;
+        ^~~~~~~
+../src/BRAM_PS_PL.c:109:8: warning: unused variable 'sum' [-Wunused-variable]
+  float sum = 0.0;
+        ^~~
+../src/BRAM_PS_PL.c:108:8: warning: unused variable 'data' [-Wunused-variable]
+  float data[5] = {0.0};
+        ^~~~
+../src/BRAM_PS_PL.c:107:6: warning: unused variable 'inx' [-Wunused-variable]
+  int inx = 0;
+      ^~~
+../src/BRAM_PS_PL.c:106:8: warning: unused variable 'avg_sum' [-Wunused-variable]
+  float avg_sum = 0.0;
+        ^~~~~~~
+../src/BRAM_PS_PL.c:62:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94428	   2688	  23424	 120540	  1d6dc	PS.elf
+Finished building: PS.elf.size
+ 
+11:25:57 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:29:36 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:111:8: warning: unused variable 'avg_xadc' [-Wunused-variable]
+  float avg_xadc = 0.0;
+        ^~~~~~~~
+../src/BRAM_PS_PL.c:110:8: warning: unused variable 'avg_sum_xadc9' [-Wunused-variable]
+  float avg_sum_xadc9 = 0.0;
+        ^~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:109:8: warning: unused variable 'avg_sum_xadc1' [-Wunused-variable]
+  float avg_sum_xadc1 = 0.0;
+        ^~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:108:8: warning: unused variable 'avg_data_xadc9' [-Wunused-variable]
+  float avg_data_xadc9[WINDOW_SIZE] = {0.0};
+        ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:107:8: warning: unused variable 'avg_data_xadc1' [-Wunused-variable]
+  float avg_data_xadc1[WINDOW_SIZE] = {0.0};
+        ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:106:6: warning: unused variable 'avg_index' [-Wunused-variable]
+  int avg_index = 0;
+      ^~~~~~~~~
+../src/BRAM_PS_PL.c:62:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94428	   2688	  23424	 120540	  1d6dc	PS.elf
+Finished building: PS.elf.size
+ 
+11:30:23 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:48:18 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:132:20: error: 'avg_data_xadc1' undeclared (first use in this function)
+   xadc1_avg_sum -= avg_data_xadc1[xadc_avg_index];
+                    ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:132:20: note: each undeclared identifier is reported only once for each function it appears in
+../src/BRAM_PS_PL.c:134:18: error: 'avg_index_xadc1' undeclared (first use in this function)
+   xadc1_avg_data[avg_index_xadc1] = xadc1_read;
+                  ^~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:138:20: error: 'avg_data_xadc9' undeclared (first use in this function)
+   xadc9_avg_sum -= avg_data_xadc9[xadc_avg_index];
+                    ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:140:18: error: 'avg_index_xadc9' undeclared (first use in this function)
+   xadc9_avg_data[avg_index_xadc9] = xadc9_read;
+                  ^~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:108:8: warning: variable 'xadc9_avg_data' set but not used [-Wunused-but-set-variable]
+  float xadc9_avg_data[WINDOW_SIZE] = {0.0};
+        ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:107:8: warning: variable 'xadc1_avg_data' set but not used [-Wunused-but-set-variable]
+  float xadc1_avg_data[WINDOW_SIZE] = {0.0};
+        ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:62:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+make: *** [src/BRAM_PS_PL.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+11:49:11 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:134:18: error: 'xadc__avg_index' undeclared (first use in this function); did you mean 'xadc_avg_index'?
+   xadc1_avg_data[xadc__avg_index] = xadc1_read;
+                  ^~~~~~~~~~~~~~~
+                  xadc_avg_index
+../src/BRAM_PS_PL.c:134:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/BRAM_PS_PL.c:62:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+make: *** [src/BRAM_PS_PL.o] Error 1
+11:49:25 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:62:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94428	   2688	  23424	 120540	  1d6dc	PS.elf
+Finished building: PS.elf.size
+ 
+11:51:10 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96164	   2688	  23424	 122276	  1dda4	PS.elf
+Finished building: PS.elf.size
+ 
+11:51:22 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:54:40 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:148:12: error: 'offset' undeclared (first use in this function); did you mean 'off_t'?
+            offset, (int)(xadc1_value), XAdcFractionToInt(xadc1_value));
+            ^~~~~~
+            off_t
+../src/BRAM_PS_PL.c:148:12: note: each undeclared identifier is reported only once for each function it appears in
+../src/BRAM_PS_PL.c: In function 'XAdcPolledPrintfExample':
+../src/BRAM_PS_PL.c:220:10: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+    offset, (int)(VccPintData), XAdcFractionToInt(VccPintData));
+          ^
+../src/BRAM_PS_PL.c:220:30: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    offset, (int)(VccPintData), XAdcFractionToInt(VccPintData));
+                              ^
+../src/BRAM_PS_PL.c:220:62: error: expected ';' before ')' token
+    offset, (int)(VccPintData), XAdcFractionToInt(VccPintData));
+                                                              ^
+                                                              ;
+../src/BRAM_PS_PL.c:220:62: error: expected statement before ')' token
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+make: *** [src/BRAM_PS_PL.o] Error 1
+11:55:30 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'XAdcPolledPrintfExample':
+../src/BRAM_PS_PL.c:221:10: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    offset, (int)(VccPintData), XAdcFractionToInt(VccPintData));
+          ^
+../src/BRAM_PS_PL.c:221:30: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    offset, (int)(VccPintData), XAdcFractionToInt(VccPintData));
+                              ^
+../src/BRAM_PS_PL.c:221:62: error: expected ';' before ')' token
+    offset, (int)(VccPintData), XAdcFractionToInt(VccPintData));
+                                                              ^
+                                                              ;
+../src/BRAM_PS_PL.c:221:62: error: expected statement before ')' token
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+make: *** [src/BRAM_PS_PL.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+11:55:50 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96164	   2688	  23424	 122276	  1dda4	PS.elf
+Finished building: PS.elf.size
+ 
+11:56:07 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:57:19 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96164	   2688	  23424	 122276	  1dda4	PS.elf
+Finished building: PS.elf.size
+ 
+11:57:33 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+12:00:14 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:62:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94308	   2688	  23424	 120420	  1d664	PS.elf
+Finished building: PS.elf.size
+ 
+12:00:53 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+12:01:26 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:13:25 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:63:6: warning: unused variable 'pwm_mem_out' [-Wunused-variable]
+  int pwm_mem_out;
+      ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:40:14: warning: 'voltage_divider_ratio' defined but not used [-Wunused-variable]
+ static float voltage_divider_ratio = 1/(1-(10000/15100));
+              ^~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  94308	   2696	  23424	 120428	  1d66c	PS.elf
+Finished building: PS.elf.size
+ 
+13:14:32 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96164	   2696	  23424	 122284	  1ddac	PS.elf
+Finished building: PS.elf.size
+ 
+13:16:23 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:32:11 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96292	   2696	  23424	 122412	  1de2c	PS.elf
+Finished building: PS.elf.size
+ 
+13:32:22 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:33:37 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96300	   2696	  23424	 122420	  1de34	PS.elf
+Finished building: PS.elf.size
+ 
+13:33:44 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:34:37 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96300	   2696	  23424	 122420	  1de34	PS.elf
+Finished building: PS.elf.size
+ 
+13:34:48 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:35:48 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96300	   2696	  23424	 122420	  1de34	PS.elf
+Finished building: PS.elf.size
+ 
+13:35:56 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:36:25 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96300	   2696	  23424	 122420	  1de34	PS.elf
+Finished building: PS.elf.size
+ 
+13:36:37 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:18:13 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:76:11: warning: format '%f' expects argument of type 'float *', but argument 2 has type 'int *' [-Wformat=]
+   scanf("%f", &battery_capacity);
+          ~^   ~~~~~~~~~~~~~~~~~
+          %d
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96988	   2696	  23424	 123108	  1e0e4	PS.elf
+Finished building: PS.elf.size
+ 
+14:18:29 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:19:12 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96988	   2696	  23424	 123108	  1e0e4	PS.elf
+Finished building: PS.elf.size
+ 
+14:19:19 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:21:02 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96988	   2696	  23424	 123108	  1e0e4	PS.elf
+Finished building: PS.elf.size
+ 
+14:21:08 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:23:25 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96284	   2696	  23424	 122404	  1de24	PS.elf
+Finished building: PS.elf.size
+ 
+14:23:33 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:26:29 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96284	   2696	  23424	 122404	  1de24	PS.elf
+Finished building: PS.elf.size
+ 
+14:26:33 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96284	   2696	  23424	 122404	  1de24	PS.elf
+Finished building: PS.elf.size
+ 
+14:26:42 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:27:55 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96220	   2696	  23424	 122340	  1dde4	PS.elf
+Finished building: PS.elf.size
+ 
+14:28:10 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:29:20 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96204	   2696	  23424	 122324	  1ddd4	PS.elf
+Finished building: PS.elf.size
+ 
+14:30:40 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96268	   2696	  23424	 122388	  1de14	PS.elf
+Finished building: PS.elf.size
+ 
+14:31:13 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:39:51 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:46:21 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:56:20 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:00:57 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:14:05 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:29:29 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:169:6: error: 'xadc9' undeclared (first use in this function); did you mean 'xadc9_avg'?
+   if(xadc9 < battery_nominal_voltage)
+      ^~~~~
+      xadc9_avg
+../src/BRAM_PS_PL.c:169:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/BRAM_PS_PL.c:130:8: warning: variable 'charge_percent' set but not used [-Wunused-but-set-variable]
+  float charge_percent =0;
+        ^~~~~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+make: *** [src/BRAM_PS_PL.o] Error 1
+15:29:53 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:130:8: warning: variable 'charge_percent' set but not used [-Wunused-but-set-variable]
+  float charge_percent =0;
+        ^~~~~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96396	   2704	  23424	 122524	  1de9c	PS.elf
+Finished building: PS.elf.size
+ 
+15:32:21 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96396	   2704	  23424	 122524	  1de9c	PS.elf
+Finished building: PS.elf.size
+ 
+15:34:14 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:35:06 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:36:00 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96396	   2704	  23424	 122524	  1de9c	PS.elf
+Finished building: PS.elf.size
+ 
+15:36:06 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:36:51 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:37:36 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:40:36 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:43:03 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96396	   2704	  23424	 122524	  1de9c	PS.elf
+Finished building: PS.elf.size
+ 
+15:43:16 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:45:19 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96396	   2704	  23424	 122524	  1de9c	PS.elf
+Finished building: PS.elf.size
+ 
+15:45:25 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:03:49 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96396	   2704	  23424	 122524	  1de9c	PS.elf
+Finished building: PS.elf.size
+ 
+16:07:17 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:26:55 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96460	   2704	  23424	 122588	  1dedc	PS.elf
+Finished building: PS.elf.size
+ 
+16:27:07 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:42:59 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:169:37: error: 'vnom' undeclared (first use in this function)
+   float perc_cut = ((1.35-1.2)/1.2)*vnom;
+                                     ^~~~
+../src/BRAM_PS_PL.c:169:37: note: each undeclared identifier is reported only once for each function it appears in
+../src/BRAM_PS_PL.c:175:23: error: 'xadc0_value' undeclared (first use in this function); did you mean 'xadc9_value'?
+    charge_percent = ((xadc0_value-(1.3125/1.2)*battery_nominal_voltage)*(100-0))/(((1.5/1.2)*battery_nominal_voltage)-((1.3125/1.2)*battery_nominal_voltage));
+                       ^~~~~~~~~~~
+                       xadc9_value
+At top level:
+../src/BRAM_PS_PL.c:41:14: warning: 'battery_voltage_difference2' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference2 = (1.5-1.35);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:40:14: warning: 'battery_voltage_difference1' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference1 = (1.35/1.2);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+make: *** [src/BRAM_PS_PL.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+17:43:39 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:167:37: error: 'vnom' undeclared (first use in this function)
+   float perc_cut = ((1.35-1.2)/1.2)*vnom;
+                                     ^~~~
+../src/BRAM_PS_PL.c:167:37: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+make: *** [src/BRAM_PS_PL.o] Error 1
+17:43:55 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96460	   2696	  23424	 122580	  1ded4	PS.elf
+Finished building: PS.elf.size
+ 
+17:44:04 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96460	   2696	  23424	 122580	  1ded4	PS.elf
+Finished building: PS.elf.size
+ 
+17:44:40 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:48:36 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96524	   2696	  23424	 122644	  1df14	PS.elf
+Finished building: PS.elf.size
+ 
+17:48:44 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:51:22 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96524	   2696	  23424	 122644	  1df14	PS.elf
+Finished building: PS.elf.size
+ 
+17:51:38 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:55:06 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:155:27: error: 'perc_cut' undeclared (first use in this function)
+                  9, (int)(perc_cut), XAdcFractionToInt(perc_cut));
+                           ^~~~~~~~
+../src/BRAM_PS_PL.c:155:27: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+make: *** [src/BRAM_PS_PL.o] Error 1
+17:55:50 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96524	   2696	  23424	 122644	  1df14	PS.elf
+Finished building: PS.elf.size
+ 
+17:55:56 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:57:25 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96460	   2696	  23424	 122580	  1ded4	PS.elf
+Finished building: PS.elf.size
+ 
+17:57:49 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:01:09 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96460	   2696	  23424	 122580	  1ded4	PS.elf
+Finished building: PS.elf.size
+ 
+18:01:17 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:05:48 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96460	   2696	  23424	 122580	  1ded4	PS.elf
+Finished building: PS.elf.size
+ 
+18:06:02 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:07:20 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+10:54:58 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+10:55:49 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+10:56:26 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:01:38 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:02:08 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:15:24 **** Clean-only build of project Ex1_bsp ****
+make -k clean 
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s clean 
+rm -f ps7_cortexa9_0/lib/libxil.a
+11:15:25 **** Clean-only build of configuration Debug for project PS ****
+make clean 
+rm -rf  ./src/BRAM_PS_PL.o ./src/platform.o  ./src/BRAM_PS_PL.d ./src/platform.d  PS.elf.size  PS.elf
+ 
+11:15:26 **** Build of project Ex1_bsp ****
+make -k all 
+Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/bram_v4_3/src
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling ddrps
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling dmaps
+Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling cpu_cortexa9
+Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scugic
+Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling emacps
+Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpiops
+Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling standalone
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling qspips
+Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling xadcps
+Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sdps
+Running Make libs in ps7_cortexa9_0/libsrc/bram_v4_3/src
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling bram
+Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling devcfg
+Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scuwdt
+Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling uartps
+Running Make libs in ps7_cortexa9_0/libsrc/sysmon_v7_5/src
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sysmon
+Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling usbps
+Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scutimer
+Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling coresightps_dcc
+Finished building libraries
+11:15:39 **** Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96460	   2696	  23424	 122580	  1ded4	PS.elf
+Finished building: PS.elf.size
+ 
+11:16:13 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:16:58 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:18:26 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:21:23 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:26:17 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96460	   2696	  23424	 122580	  1ded4	PS.elf
+Finished building: PS.elf.size
+ 
+11:26:35 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:30:46 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:36:56 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:123:8: warning: variable 'voltage_out' set but not used [-Wunused-but-set-variable]
+  float voltage_out;
+        ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96444	   2696	  23424	 122564	  1dec4	PS.elf
+Finished building: PS.elf.size
+ 
+13:12:45 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:55:48 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:56:24 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:10:50 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:124:8: warning: variable 'voltage_out' set but not used [-Wunused-but-set-variable]
+  float voltage_out;
+        ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96444	   2696	  23424	 122564	  1dec4	PS.elf
+Finished building: PS.elf.size
+ 
+14:10:52 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:11:22 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:34:39 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:35:14 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:47:50 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:113:8: warning: variable 'voltage_out' set but not used [-Wunused-but-set-variable]
+  float voltage_out;
+        ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96660	   2696	  23424	 122780	  1df9c	PS.elf
+Finished building: PS.elf.size
+ 
+14:48:43 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:146:3: error: 'voltage_out' undeclared (first use in this function)
+   voltage_out = supply_voltage*pwm_percentage*0.01;
+   ^~~~~~~~~~~
+../src/BRAM_PS_PL.c:146:3: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+make: *** [src/BRAM_PS_PL.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+14:49:10 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:113:8: warning: variable 'voltage_out' set but not used [-Wunused-but-set-variable]
+  float voltage_out;
+        ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96660	   2696	  23424	 122780	  1df9c	PS.elf
+Finished building: PS.elf.size
+ 
+14:49:40 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:146:9: warning: unused variable 'voltage_out' [-Wunused-variable]
+   float voltage_out = supply_voltage*pwm_percentage*0.01;
+         ^~~~~~~~~~~
+At top level:
+../src/BRAM_PS_PL.c:39:14: warning: 'battery_voltage_difference' defined but not used [-Wunused-variable]
+ static float battery_voltage_difference = (1.5-1.2)/1.2; // constant; check datasheet
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:35:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96660	   2696	  23424	 122780	  1df9c	PS.elf
+Finished building: PS.elf.size
+ 
+14:58:20 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c:36:14: warning: 'charge_rate_rapid' defined but not used [-Wunused-variable]
+ static float charge_rate_rapid = 0.5;
+              ^~~~~~~~~~~~~~~~~
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96652	   2696	  23424	 122772	  1df94	PS.elf
+Finished building: PS.elf.size
+ 
+14:58:37 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96652	   2688	  23424	 122764	  1df8c	PS.elf
+Finished building: PS.elf.size
+ 
+14:58:47 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:03:01 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:03:52 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:06:13 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:08:29 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:13:43 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:18:35 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+../src/BRAM_PS_PL.c: In function 'main':
+../src/BRAM_PS_PL.c:109:6: error: redefinition of 'xadc_avg_index'
+  int xadc_avg_index = 0;
+      ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:97:6: note: previous definition of 'xadc_avg_index' was here
+  int xadc_avg_index = 0;
+      ^~~~~~~~~~~~~~
+../src/BRAM_PS_PL.c:165:37: error: 'charge_avg_index' undeclared (first use in this function); did you mean 'xadc_avg_index'?
+   charge_avg_sum -= charge_avg_data[charge_avg_index];
+                                     ^~~~~~~~~~~~~~~~
+                                     xadc_avg_index
+../src/BRAM_PS_PL.c:165:37: note: each undeclared identifier is reported only once for each function it appears in
+../src/BRAM_PS_PL.c:106:8: warning: variable 'charge_avg_data' set but not used [-Wunused-but-set-variable]
+  float charge_avg_data[WINDOW_SIZE] = {0.0};
+        ^~~~~~~~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/BRAM_PS_PL.o' failed
+make: *** [src/BRAM_PS_PL.o] Error 1
+15:19:15 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96908	   2688	  23424	 123020	  1e08c	PS.elf
+Finished building: PS.elf.size
+ 
+15:20:04 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96972	   2688	  23424	 123084	  1e0cc	PS.elf
+Finished building: PS.elf.size
+ 
+15:20:12 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:24:38 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96900	   2688	  23424	 123012	  1e084	PS.elf
+Finished building: PS.elf.size
+ 
+15:24:47 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:27:32 **** Incremental Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:29:48 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96900	   2688	  23424	 123012	  1e084	PS.elf
+Finished building: PS.elf.size
+ 
+15:35:12 **** Auto Build of configuration Debug for project PS ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/BRAM_PS_PL.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BRAM_PS_PL.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Ex1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/BRAM_PS_PL.d" -MT"src/BRAM_PS_PL.o" -o "src/BRAM_PS_PL.o" "../src/BRAM_PS_PL.c"
+Finished building: ../src/BRAM_PS_PL.c
+ 
+Building target: PS.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Ex1_bsp/ps7_cortexa9_0/lib -o "PS.elf"  ./src/BRAM_PS_PL.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: PS.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size PS.elf  |tee "PS.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  96900	   2688	  23424	 123012	  1e084	PS.elf
+Finished building: PS.elf.size
+ 

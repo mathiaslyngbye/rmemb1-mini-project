@@ -1,11 +1,12 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xEDA7598EDCA94CB6",
+      "boundary_crc": "0xCF0DA23C4A20E907",
       "device": "xc7z020clg400-1",
       "name": "design_ps_pl",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2019.1.3"
+      "tool_version": "2019.1.3",
+      "validated": "true"
     },
     "design_tree": {
       "PS_BRAM": {
@@ -16,10 +17,11 @@
         "rst_ps7_0_100M": ""
       },
       "xadc_wiz_0": "",
-      "pwm_12bit_0": "",
-      "PL_BRAM_read": "",
       "pwm_enable": "",
-      "pwm_reset": ""
+      "pwm_reset": "",
+      "pwm_14bit_0": "",
+      "count_bin_0": "",
+      "PL_BRAM_read": ""
     },
     "interface_ports": {
       "BRAM_PORTB_0": {
@@ -28,16 +30,88 @@
         "parameters": {
           "MASTER_TYPE": {
             "value": "BRAM_CTRL"
+          },
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "default"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "default"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "default"
+          },
+          "READ_LATENCY": {
+            "value": "1",
+            "value_src": "default"
           }
         }
       },
       "DDR": {
         "mode": "Master",
-        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0"
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
+        "parameters": {
+          "AXI_ARBITRATION_SCHEME": {
+            "value": "TDM",
+            "value_src": "default"
+          },
+          "BURST_LENGTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "CAS_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CAS_WRITE_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CS_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_MASK_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_WIDTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "MEMORY_TYPE": {
+            "value": "COMPONENTS",
+            "value_src": "default"
+          },
+          "MEM_ADDR_MAP": {
+            "value": "ROW_COLUMN_BANK",
+            "value_src": "default"
+          },
+          "SLOT": {
+            "value": "Single",
+            "value_src": "default"
+          },
+          "TIMEPERIOD_PS": {
+            "value": "1250",
+            "value_src": "default"
+          }
+        }
       },
       "FIXED_IO": {
         "mode": "Master",
-        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0"
+        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
       },
       "Vaux1": {
         "mode": "Slave",
@@ -54,6 +128,11 @@
       },
       "pwm_out": {
         "direction": "O"
+      },
+      "data_led": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
       }
     },
     "components": {
@@ -1759,34 +1838,10 @@
           }
         },
         "interface_nets": {
-          "axi_smc_M00_AXI": {
+          "BRAM_PORTB_0_1": {
             "interface_ports": [
-              "axi_smc/M00_AXI",
-              "axi_bram_ctrl_0/S_AXI"
-            ]
-          },
-          "axi_bram_ctrl_0_BRAM_PORTA": {
-            "interface_ports": [
-              "axi_bram_ctrl_0/BRAM_PORTA",
-              "blk_mem_gen_0/BRAM_PORTA"
-            ]
-          },
-          "Conn1": {
-            "interface_ports": [
-              "M01_AXI",
-              "axi_smc/M01_AXI"
-            ]
-          },
-          "processing_system7_0_DDR": {
-            "interface_ports": [
-              "DDR",
-              "processing_system7_0/DDR"
-            ]
-          },
-          "processing_system7_0_M_AXI_GP0": {
-            "interface_ports": [
-              "processing_system7_0/M_AXI_GP0",
-              "axi_smc/S00_AXI"
+              "BRAM_PORTB_0",
+              "blk_mem_gen_0/BRAM_PORTB"
             ]
           },
           "processing_system7_0_FIXED_IO": {
@@ -1795,10 +1850,34 @@
               "processing_system7_0/FIXED_IO"
             ]
           },
-          "BRAM_PORTB_0_1": {
+          "axi_smc_M00_AXI": {
             "interface_ports": [
-              "BRAM_PORTB_0",
-              "blk_mem_gen_0/BRAM_PORTB"
+              "axi_smc/M00_AXI",
+              "axi_bram_ctrl_0/S_AXI"
+            ]
+          },
+          "processing_system7_0_DDR": {
+            "interface_ports": [
+              "DDR",
+              "processing_system7_0/DDR"
+            ]
+          },
+          "Conn1": {
+            "interface_ports": [
+              "M01_AXI",
+              "axi_smc/M01_AXI"
+            ]
+          },
+          "axi_bram_ctrl_0_BRAM_PORTA": {
+            "interface_ports": [
+              "axi_bram_ctrl_0/BRAM_PORTA",
+              "blk_mem_gen_0/BRAM_PORTA"
+            ]
+          },
+          "processing_system7_0_M_AXI_GP0": {
+            "interface_ports": [
+              "processing_system7_0/M_AXI_GP0",
+              "axi_smc/S00_AXI"
             ]
           }
         },
@@ -1883,12 +1962,30 @@
           }
         }
       },
-      "pwm_12bit_0": {
-        "vlnv": "xilinx.com:module_ref:pwm_12bit:1.0",
-        "xci_name": "design_ps_pl_pwm_12bit_0_0",
+      "pwm_enable": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_ps_pl_xlconstant_0_0",
+        "parameters": {
+          "CONST_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "pwm_reset": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_ps_pl_xlconstant_0_1",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      },
+      "pwm_14bit_0": {
+        "vlnv": "xilinx.com:module_ref:pwm_14bit:1.0",
+        "xci_name": "design_ps_pl_pwm_14bit_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "pwm_12bit",
+          "ref_name": "pwm_14bit",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -1896,18 +1993,36 @@
             "type": "rst",
             "direction": "I"
           },
-          "clk_200M_in": {
+          "clk_125M_in": {
             "direction": "I"
           },
           "duty_cycle_in": {
             "direction": "I",
-            "left": "11",
+            "left": "13",
             "right": "0"
           },
           "enable_in": {
             "direction": "I"
           },
           "pwm_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "count_bin_0": {
+        "vlnv": "xilinx.com:module_ref:count_bin:1.0",
+        "xci_name": "design_ps_pl_count_bin_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "count_bin",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "count": {
             "direction": "O"
           }
         }
@@ -1951,28 +2066,18 @@
             "left": "3",
             "right": "0"
           },
-          "data_out": {
+          "toggle_in": {
+            "direction": "I"
+          },
+          "led_out": {
             "direction": "O",
-            "left": "11",
+            "left": "3",
             "right": "0"
-          }
-        }
-      },
-      "pwm_enable": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "design_ps_pl_xlconstant_0_0",
-        "parameters": {
-          "CONST_WIDTH": {
-            "value": "1"
-          }
-        }
-      },
-      "pwm_reset": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "design_ps_pl_xlconstant_0_1",
-        "parameters": {
-          "CONST_VAL": {
-            "value": "0"
+          },
+          "pwm_out": {
+            "direction": "O",
+            "left": "13",
+            "right": "0"
           }
         }
       }
@@ -1982,12 +2087,6 @@
         "interface_ports": [
           "BRAM_PORTB_0",
           "PS_BRAM/BRAM_PORTB_0"
-        ]
-      },
-      "Vaux9_1": {
-        "interface_ports": [
-          "Vaux9",
-          "xadc_wiz_0/Vaux9"
         ]
       },
       "processing_system7_0_DDR": {
@@ -2000,6 +2099,12 @@
         "interface_ports": [
           "FIXED_IO",
           "PS_BRAM/FIXED_IO"
+        ]
+      },
+      "Vaux9_1": {
+        "interface_ports": [
+          "Vaux9",
+          "xadc_wiz_0/Vaux9"
         ]
       },
       "Vaux1_1": {
@@ -2032,8 +2137,9 @@
         "ports": [
           "sys_clk",
           "PS_BRAM/BRAM_PORTB_0_clk",
-          "PL_BRAM_read/clk_125MHz",
-          "pwm_12bit_0/clk_200M_in"
+          "pwm_14bit_0/clk_125M_in",
+          "count_bin_0/clk",
+          "PL_BRAM_read/clk_125MHz"
         ]
       },
       "BRAM_PORTB_0_we_1": {
@@ -2072,28 +2178,40 @@
           "xadc_wiz_0/s_axi_aresetn"
         ]
       },
-      "PL_BRAM_read_data_out": {
-        "ports": [
-          "PL_BRAM_read/data_out",
-          "pwm_12bit_0/duty_cycle_in"
-        ]
-      },
-      "xlconstant_0_dout": {
+      "pwm_enable_dout": {
         "ports": [
           "pwm_enable/dout",
-          "pwm_12bit_0/enable_in"
+          "pwm_14bit_0/enable_in"
         ]
       },
       "pwm_reset_dout": {
         "ports": [
           "pwm_reset/dout",
-          "pwm_12bit_0/reset_in"
+          "pwm_14bit_0/reset_in"
         ]
       },
-      "pwm_12bit_0_pwm_out": {
+      "pwm_14bit_0_pwm_out": {
         "ports": [
-          "pwm_12bit_0/pwm_out",
+          "pwm_14bit_0/pwm_out",
           "pwm_out"
+        ]
+      },
+      "PL_BRAM_read_led_out": {
+        "ports": [
+          "PL_BRAM_read/led_out",
+          "data_led"
+        ]
+      },
+      "PL_BRAM_read_pwm_out": {
+        "ports": [
+          "PL_BRAM_read/pwm_out",
+          "pwm_14bit_0/duty_cycle_in"
+        ]
+      },
+      "count_bin_0_count": {
+        "ports": [
+          "count_bin_0/count",
+          "PL_BRAM_read/toggle_in"
         ]
       }
     },

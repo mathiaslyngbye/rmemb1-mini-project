@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1580473237">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1581081788">
   <File Type="PA-TCL" Name="design_ps_pl_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="design_ps_pl_wrapper_reports.tcl"/>
   <File Type="OPT-DCP" Name="design_ps_pl_wrapper_opt.dcp"/>
@@ -64,6 +64,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/toggle_counter.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/design_ps_pl/design_ps_pl.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -73,6 +79,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/bd/design_ps_pl/hdl/design_ps_pl_wrapper.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/data_read_interface.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -117,9 +130,10 @@
   <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_axi_bram_ctrl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_rst_ps7_0_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_pwm_12bit_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_xadc_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_axi_smc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_blk_mem_gen_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_PL_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_count_bin_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_pwm_14bit_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_xadc_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_ps_pl_axi_smc_0"/>
 </GenRun>

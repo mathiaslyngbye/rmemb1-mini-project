@@ -1,8 +1,8 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
--- Date        : Fri Jan 31 13:21:14 2020
--- Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
+-- Date        : Fri Feb  7 14:23:47 2020
+-- Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_ps_pl_PL_0_0_sim_netlist.vhdl
 -- Design      : design_ps_pl_PL_0_0
@@ -10,6 +10,250 @@
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7z020clg400-1
 -- --------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PL is
+  port (
+    led_out : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    BRAM_PORTB_0_addr : out STD_LOGIC_VECTOR ( 0 to 0 );
+    pwm_out : out STD_LOGIC_VECTOR ( 13 downto 0 );
+    BRAM_PORTB_0_dout : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    toggle_in : in STD_LOGIC
+  );
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PL;
+
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PL is
+  signal \^bram_portb_0_addr\ : STD_LOGIC_VECTOR ( 0 to 0 );
+  attribute XILINX_LEGACY_PRIM : string;
+  attribute XILINX_LEGACY_PRIM of \led_tmp_reg[0]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \led_tmp_reg[1]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \led_tmp_reg[2]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \led_tmp_reg[3]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[0]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[10]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[11]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[12]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[13]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[1]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[2]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[3]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[4]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[5]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[6]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[7]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[8]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \pwm_tmp_reg[9]\ : label is "LD";
+begin
+  BRAM_PORTB_0_addr(0) <= \^bram_portb_0_addr\(0);
+\BRAM_PORTB_0_addr[3]_INST_0\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => toggle_in,
+      O => \^bram_portb_0_addr\(0)
+    );
+\led_tmp_reg[0]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(0),
+      G => \^bram_portb_0_addr\(0),
+      GE => '1',
+      Q => led_out(0)
+    );
+\led_tmp_reg[1]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(1),
+      G => \^bram_portb_0_addr\(0),
+      GE => '1',
+      Q => led_out(1)
+    );
+\led_tmp_reg[2]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(2),
+      G => \^bram_portb_0_addr\(0),
+      GE => '1',
+      Q => led_out(2)
+    );
+\led_tmp_reg[3]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(3),
+      G => \^bram_portb_0_addr\(0),
+      GE => '1',
+      Q => led_out(3)
+    );
+\pwm_tmp_reg[0]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(0),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(0)
+    );
+\pwm_tmp_reg[10]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(10),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(10)
+    );
+\pwm_tmp_reg[11]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(11),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(11)
+    );
+\pwm_tmp_reg[12]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(12),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(12)
+    );
+\pwm_tmp_reg[13]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(13),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(13)
+    );
+\pwm_tmp_reg[1]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(1),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(1)
+    );
+\pwm_tmp_reg[2]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(2),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(2)
+    );
+\pwm_tmp_reg[3]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(3),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(3)
+    );
+\pwm_tmp_reg[4]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(4),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(4)
+    );
+\pwm_tmp_reg[5]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(5),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(5)
+    );
+\pwm_tmp_reg[6]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(6),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(6)
+    );
+\pwm_tmp_reg[7]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(7),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(7)
+    );
+\pwm_tmp_reg[8]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(8),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(8)
+    );
+\pwm_tmp_reg[9]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => BRAM_PORTB_0_dout(9),
+      G => toggle_in,
+      GE => '1',
+      Q => pwm_out(9)
+    );
+end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
@@ -23,7 +267,9 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
     BRAM_PORTB_0_din : out STD_LOGIC_VECTOR ( 31 downto 0 );
     BRAM_PORTB_0_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
     BRAM_PORTB_0_we : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    data_out : out STD_LOGIC_VECTOR ( 11 downto 0 )
+    toggle_in : in STD_LOGIC;
+    led_out : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    pwm_out : out STD_LOGIC_VECTOR ( 13 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
@@ -40,7 +286,8 @@ end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal \<const0>\ : STD_LOGIC;
   signal \<const1>\ : STD_LOGIC;
-  signal \^bram_portb_0_dout\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \^bram_portb_0_addr\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal \^toggle_in\ : STD_LOGIC;
   attribute x_interface_info : string;
   attribute x_interface_info of BRAM_PORTB_0_rst : signal is "xilinx.com:signal:reset:1.0 BRAM_PORTB_0_rst RST";
   attribute x_interface_parameter : string;
@@ -74,8 +321,8 @@ begin
   BRAM_PORTB_0_addr(6) <= \<const0>\;
   BRAM_PORTB_0_addr(5) <= \<const0>\;
   BRAM_PORTB_0_addr(4) <= \<const0>\;
-  BRAM_PORTB_0_addr(3) <= \<const0>\;
-  BRAM_PORTB_0_addr(2) <= \<const1>\;
+  BRAM_PORTB_0_addr(3) <= \^bram_portb_0_addr\(3);
+  BRAM_PORTB_0_addr(2) <= \^toggle_in\;
   BRAM_PORTB_0_addr(1) <= \<const0>\;
   BRAM_PORTB_0_addr(0) <= \<const0>\;
   BRAM_PORTB_0_din(31) <= \<const0>\;
@@ -116,11 +363,18 @@ begin
   BRAM_PORTB_0_we(2) <= \<const0>\;
   BRAM_PORTB_0_we(1) <= \<const0>\;
   BRAM_PORTB_0_we(0) <= \<const0>\;
-  \^bram_portb_0_dout\(11 downto 0) <= BRAM_PORTB_0_dout(11 downto 0);
-  data_out(11 downto 0) <= \^bram_portb_0_dout\(11 downto 0);
+  \^toggle_in\ <= toggle_in;
 GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
+    );
+U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PL
+     port map (
+      BRAM_PORTB_0_addr(0) => \^bram_portb_0_addr\(3),
+      BRAM_PORTB_0_dout(13 downto 0) => BRAM_PORTB_0_dout(13 downto 0),
+      led_out(3 downto 0) => led_out(3 downto 0),
+      pwm_out(13 downto 0) => pwm_out(13 downto 0),
+      toggle_in => \^toggle_in\
     );
 VCC: unisim.vcomponents.VCC
      port map (

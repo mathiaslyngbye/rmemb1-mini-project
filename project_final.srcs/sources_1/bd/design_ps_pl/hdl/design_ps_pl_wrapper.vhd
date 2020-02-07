@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1.3 (lin64) Build 2644227 Wed Sep  4 09:44:18 MDT 2019
---Date        : Fri Jan 31 13:20:18 2020
---Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.3 LTS
+--Date        : Fri Feb  7 14:22:48 2020
+--Host        : ThinkPad-L560 running 64-bit Ubuntu 18.04.4 LTS
 --Command     : generate_target design_ps_pl_wrapper.bd
 --Design      : design_ps_pl_wrapper
 --Purpose     : IP block netlist
@@ -38,6 +38,7 @@ entity design_ps_pl_wrapper is
     Vaux1_v_p : in STD_LOGIC;
     Vaux9_v_n : in STD_LOGIC;
     Vaux9_v_p : in STD_LOGIC;
+    data_led : out STD_LOGIC_VECTOR ( 3 downto 0 );
     pwm_out : out STD_LOGIC;
     sys_clk : in STD_LOGIC
   );
@@ -47,14 +48,7 @@ architecture STRUCTURE of design_ps_pl_wrapper is
   component design_ps_pl is
   port (
     sys_clk : in STD_LOGIC;
-    Vaux9_v_n : in STD_LOGIC;
-    Vaux9_v_p : in STD_LOGIC;
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
+    pwm_out : out STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -70,9 +64,17 @@ architecture STRUCTURE of design_ps_pl_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    Vaux9_v_n : in STD_LOGIC;
+    Vaux9_v_p : in STD_LOGIC;
     Vaux1_v_n : in STD_LOGIC;
     Vaux1_v_p : in STD_LOGIC;
-    pwm_out : out STD_LOGIC
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    data_led : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_ps_pl;
 begin
@@ -103,6 +105,7 @@ design_ps_pl_i: component design_ps_pl
       Vaux1_v_p => Vaux1_v_p,
       Vaux9_v_n => Vaux9_v_n,
       Vaux9_v_p => Vaux9_v_p,
+      data_led(3 downto 0) => data_led(3 downto 0),
       pwm_out => pwm_out,
       sys_clk => sys_clk
     );

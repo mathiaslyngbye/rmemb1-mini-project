@@ -62,7 +62,9 @@ ENTITY design_ps_pl_PL_0_0 IS
     BRAM_PORTB_0_din : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     BRAM_PORTB_0_addr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     BRAM_PORTB_0_we : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    data_out : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+    toggle_in : IN STD_LOGIC;
+    led_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    pwm_out : OUT STD_LOGIC_VECTOR(13 DOWNTO 0)
   );
 END design_ps_pl_PL_0_0;
 
@@ -78,7 +80,9 @@ ARCHITECTURE design_ps_pl_PL_0_0_arch OF design_ps_pl_PL_0_0 IS
       BRAM_PORTB_0_din : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       BRAM_PORTB_0_addr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       BRAM_PORTB_0_we : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-      data_out : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+      toggle_in : IN STD_LOGIC;
+      led_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      pwm_out : OUT STD_LOGIC_VECTOR(13 DOWNTO 0)
     );
   END COMPONENT PL;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -103,6 +107,8 @@ BEGIN
       BRAM_PORTB_0_din => BRAM_PORTB_0_din,
       BRAM_PORTB_0_addr => BRAM_PORTB_0_addr,
       BRAM_PORTB_0_we => BRAM_PORTB_0_we,
-      data_out => data_out
+      toggle_in => toggle_in,
+      led_out => led_out,
+      pwm_out => pwm_out
     );
 END design_ps_pl_PL_0_0_arch;
